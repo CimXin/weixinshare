@@ -5,6 +5,10 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
+//引入ticket刷新
+const getTicket = require('./common/common');
+getTicket();
+
 const index = require('./routes/index');
 const users = require('./routes/users');
 
