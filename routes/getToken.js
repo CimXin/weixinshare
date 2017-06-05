@@ -3,7 +3,7 @@
  */
 const fs = require('fs');
 
-function getCacheToken() {
+function getCacheToken(next) {
     fs.readFile("../../weixinnode/token","utf-8",function (err,data) {
         next(data);
     });
