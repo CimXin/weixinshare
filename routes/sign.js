@@ -9,7 +9,7 @@ const createTimestamp = function () {
 
 const raw = function (args) {
     let keys = Object.keys(args);
-    keys = keys.sort()
+    keys = keys.sort();
     let newArgs = {};
     keys.forEach(function (key) {
         newArgs[key.toLowerCase()] = args[key];
@@ -32,6 +32,7 @@ const raw = function (args) {
  * @returns
  */
 const sign = function (jsapi_ticket, url) {
+    console.log("<1> ",jsapi_ticket,url);
     let ret = {
         jsapi_ticket: jsapi_ticket,
         nonceStr: createNonceStr(),
