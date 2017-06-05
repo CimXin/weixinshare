@@ -3,8 +3,9 @@ const Api = require("wechat-api");
 const express = require('express');
 const router = express.Router();
 const config = require("../config/config");
-
 const api = new Api(config.wechat.appid, config.wechat.appSecret);
+const sign = require("./sign");
+const getToken = require("./getToken");
 
 router.get("/getConfig", function (req, res, next) {
     var params = {
@@ -23,7 +24,10 @@ router.get("/getConfig", function (req, res, next) {
 });
 
 router.get("/test", function (req, res, next) {
-    res.send({test: "test"});
+    getToken(function (data) {
+        res.send({test: data});
+    })
+
 });
 
 module.exports = router;
