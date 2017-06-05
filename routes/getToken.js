@@ -4,7 +4,7 @@
 const fs = require('fs');
 
 function getCacheToken(next) {
-    fs.readFile("../../weixinnode/token","utf-8",function (err,data) {
+    fs.readFile("../weixinnode/token","utf-8",function (err,data) {
         next(data);
     });
 }
