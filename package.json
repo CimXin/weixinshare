@@ -14,6 +14,7 @@
     "jssha": "^2.3.0",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2",
-    "wechat-api": "^1.32.1"
+    "wechat-api": "^1.32.1",
+    "request": "^2.81.0"
   }
 }
