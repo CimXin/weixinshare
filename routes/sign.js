@@ -1,3 +1,4 @@
+'use strict';
 const createNonceStr = function () {
     return Math.random().toString(36).substr(2, 15);
 };
@@ -38,8 +39,8 @@ const sign = function (jsapi_ticket, url) {
         url: url
     };
     let string = raw(ret);
-    jsSHA = require('jssha');
-    shaObj = new jsSHA(string, 'TEXT');
+    let jsSHA = require('jssha');
+    let shaObj = new jsSHA(string, 'TEXT');
     ret.signature = shaObj.getHash('SHA-1', 'HEX');
 
     return ret;
