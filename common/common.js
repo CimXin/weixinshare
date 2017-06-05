@@ -1,7 +1,7 @@
 'use strict';
 const request = require('request');
 const fs = require('fs');
-const getToken = require("./getToken");
+const getToken = require("../routes/getToken");
 
 const getTicket = function (access_token) {
     let requrl = "http://api.weixin.qq.com/cgi-bin/ticket/getticket?type=jsapi&access_token=";
