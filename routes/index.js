@@ -26,7 +26,10 @@ const getTicket = require('./getTicket');
 
 router.get("/test", function (req, res, next) {
     getTicket(function (data) {
-        res.send({ticket: data});
+        let ret = sign(data, config.gameUrl);
+        console.log(ret);
+        res.send(ret);
+
     })
 });
 
