@@ -1,5 +1,5 @@
 'use strict';
-const Api = require("weixin-api");
+const Api = require("wechat-api");
 const express = require('express');
 const router = express.Router();
 const config = require("../config/config");
