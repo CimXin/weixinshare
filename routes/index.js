@@ -5,7 +5,7 @@ const router = express.Router();
 const config = require("../config/config");
 // const api = new Api(config.wechat.appid, config.wechat.appSecret);
 const sign = require("./sign");
-const getToken = require("./getToken");
+// const getToken = require("./getToken");
 const getTicket = require('./getTicket');
 
 // router.get("/getConfig", function (req, res, next) {
@@ -25,15 +25,9 @@ const getTicket = require('./getTicket');
 // });
 
 router.get("/test", function (req, res, next) {
-    getToken(function (data) {
-        // res.send({test: data});
-        getTicket(data)
-            .then((data) => {
-                console.log(typeof data, data);
-                res.send(data);
-            })
+    getTicket(function (data) {
+        res.send({ticket: data});
     })
-
 });
 
 module.exports = router;

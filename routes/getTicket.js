@@ -1,22 +1,10 @@
 'use strict';
-const request = require('request');
-function getTicket(access_token) {
-    let requrl = "http://api.weixin.qq.com/cgi-bin/ticket/getticket?type=jsapi&access_token=";
-    let options = {
-        method: 'get',
-        url: requrl + access_token
-    };
+const fs = require("fs");
 
-    return new Promise((resolve, reject) => {
-        request(options, (err, res, body) => {
-            if (res) {
-                resolve(body);
-            } else {
-                reject(err);
-            }
-        })
-    })
-
+function getTicket(next) {
+   fs.readFile("./ticket","utf-8",function (err,data) {
+       next(data);
+   })
 }
 
 module.exports = getTicket;
