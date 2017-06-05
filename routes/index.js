@@ -16,7 +16,7 @@ router.get("/getConfig", function (req, res, next) {
         url: req.query.url
     };
 
-    api.getJSConfig(params, function (err, result) {
+    api.getJsConfig(params, function (err, result) {
         console.log(result);
         res.send(result);
     });
