@@ -8,24 +8,8 @@ const sign = require("./sign");
 // const getToken = require("./getToken");
 const getTicket = require('./getTicket');
 
-// router.get("/getConfig", function (req, res, next) {
-//     var params = {
-//         debug: true,
-//         jsApiList: [
-//             "onMenuShareTimeline",
-//             "onMenuShareAppMessage"
-//         ],
-//         url: req.query.url
-//     };
-//
-//     api.getJsConfig(params, function (err, result) {
-//         console.log(result);
-//         res.send(result);
-//     });
-// });
-
 router.get("/test", function (req, res, next) {
-    console.log(res.query.url);
+    console.log("打印",req.query.url);
     getTicket(function (data) {
         let ret = sign(data, config.gameUrl);
         console.log(ret);
