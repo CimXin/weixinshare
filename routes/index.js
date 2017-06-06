@@ -25,6 +25,7 @@ const getTicket = require('./getTicket');
 // });
 
 router.get("/test", function (req, res, next) {
+    console.log(res.query.url);
     getTicket(function (data) {
         let ret = sign(data, config.gameUrl);
         console.log(ret);
