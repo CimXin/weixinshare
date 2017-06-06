@@ -38,13 +38,14 @@ const sign = function (jsapi_ticket, url) {
         jsapi_ticket: jsapi_ticket,
         nonceStr: createNonceStr(),
         timestamp: createTimestamp(),
-        url: url,
-        appId: config.wechat.appid
+        url: url
     };
     let string = raw(ret);
     let jsSHA = require('jssha');
+    console.log("生成签名前 ", string);
     let shaObj = new jsSHA(string, 'TEXT');
     ret.signature = shaObj.getHash('SHA-1', 'HEX');
+    ret.appId = config.wechat.appid;
 
     return ret;
 };
