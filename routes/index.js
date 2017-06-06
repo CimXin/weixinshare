@@ -9,9 +9,9 @@ const sign = require("./sign");
 const getTicket = require('./getTicket');
 
 router.get("/test", function (req, res, next) {
-    console.log("打印",req.query.url);
+    console.log("打印", req.query.url);
     getTicket(function (data) {
-        let ret = sign(data, config.gameUrl);
+        let ret = sign(data, req.query.url);
         console.log(ret);
         res.send(ret);
 
