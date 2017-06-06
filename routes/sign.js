@@ -31,13 +31,15 @@ const raw = function (args) {
  *
  * @returns
  */
+const config = require("../config/config");
 const sign = function (jsapi_ticket, url) {
-    console.log("<1> ",jsapi_ticket,url);
+    console.log("<1> ", jsapi_ticket, url);
     let ret = {
         jsapi_ticket: jsapi_ticket,
         nonceStr: createNonceStr(),
         timestamp: createTimestamp(),
-        url: url
+        url: url,
+        appId: config.wechat.appid
     };
     let string = raw(ret);
     let jsSHA = require('jssha');
