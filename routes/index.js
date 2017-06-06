@@ -18,4 +18,9 @@ router.get("/test", function (req, res, next) {
     })
 });
 
+router.get("/game/ttw",function (req,res,next) {
+     res.redirect("http://127.0.0.1:5566/login.html");
+     res.end();
+});
+
 module.exports = router;
