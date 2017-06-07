@@ -18,9 +18,16 @@ router.get("/test", function (req, res, next) {
     })
 });
 
-router.get("/game/ttw",function (req,res,next) {
-     res.redirect("http://127.0.0.1:5566/login.html");
-     res.end();
+router.get("/game/ttw/MP_verify_K93IutgzdBc0FC8B.txt", function (req, res, next) {
+    // res.redirect("http://127.0.0.1:5566/MP_verify_K93IutgzdBc0FC8B.txt");
+    res.redirect(config.gameEnter + "MP_verify_K93IutgzdBc0FC8B.txt");
+    res.end();
+});
+
+router.get("/game/ttw", function (req, res, next) {
+    // res.redirect("http://127.0.0.1:5566/MP_verify_K93IutgzdBc0FC8B.txt");
+    res.redirect(config.gameEnter + "/login.html");
+    res.end();
 });
 
 module.exports = router;
