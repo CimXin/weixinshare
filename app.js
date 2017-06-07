@@ -4,8 +4,8 @@ const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const nunjucks = require('nunjucks');
-const ejs = require("ejs");
+// const nunjucks = require('nunjucks');
+// const ejs = require("ejs");
 
 //引入ticket刷新
 const getTicket = require('./common/common');
@@ -28,8 +28,8 @@ app.all('*', function (req, res, next) {
 
 // view engine setup
 // app.engine('html', nunjucks.render);
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+// app.engine('html', require('ejs').renderFile);
+// app.set('view engine', 'html');
 
 app.use(express.static('public'));
 app.use(express.static('public/images'));
