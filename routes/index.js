@@ -30,8 +30,12 @@ router.get("/games/ttw", function (req, res, next) {
     res.end();
 });
 
-router.get("/test1",function (req,res,next) {
+router.get("/test1", function (req, res, next) {
     res.redirect("/images/test.html")
+});
+
+router.get("/log",function (req,res,next) {
+    res.send("ok");
 });
 
 module.exports = router;
